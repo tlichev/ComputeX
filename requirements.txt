@@ -1,0 +1,11 @@
+# Django and related packages
+Django>=3.2,<4.0      # Adjust the version as per your project requirements
+djangorestframework   # If you're using Django REST framework
+dj-database-url       # For handling database URLs in settings
+
+# Utility packages
+gunicorn               # Production WSGI server for running Django in Docker
+
+# Testing and Development tools
+pytest                 # For testing
+pytest-django          # For Django-specific testing functionality
