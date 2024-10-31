@@ -1,0 +1,67 @@
+
+{% extends 'partials/base.html' %}
+{% load static %}
+
+{% block main_content %}
+
+    <!-- Services Section -->
+<!-- Features Details Section -->
+    <section id="features-details" class="features-details section">
+
+      <div class="container">
+
+        <div class="row gy-4 justify-content-between features-item">
+
+
+        </div><!-- Features Item -->
+
+        <div class="row gy-4 justify-content-between features-item">
+
+          <div class="col-lg-5 d-flex align-items-center order-2 order-lg-1" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="content">
+              <h3>CSV File Upload and Calculation</h3>
+              <p>
+                Quidem qui dolore incidunt aut. In assumenda harum id iusto lorena plasico mares
+              </p>
+
+             {% if error %}
+             <h1 style="color: red;">{{ error }}</h1>
+             {% endif %}
+          <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button style="display: inline-block;border-radius: 4px;
+ background-color: #388da8;
+ border: none;
+ color: #FFFFFF;
+ text-align: center;
+ font-size: 17px;
+ padding: 16px;
+ width: 130px;
+ transition: all 0.5s;
+ cursor: pointer;
+ margin: 5px;"  type="submit" class="default-btn">Upload and Compute</button>
+          </form>
+
+          {% if result is not None %}
+             <h3>Computed Result: {{ result }}</h3>
+         {% endif %}
+
+
+
+              <p></p>
+            </div>
+
+          </div>
+
+          <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="200">
+            <img src="{% static '/img/features-2.jpg' %}" class="img-fluid" alt="">
+          </div>
+
+        </div><!-- Features Item -->
+
+      </div>
+
+    </section><!-- /Features Details Section -->
+{% endblock %}

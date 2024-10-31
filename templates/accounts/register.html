@@ -1,0 +1,39 @@
+ {% extends 'partials/base.html' %}
+{% load static %}
+
+{% block main_content %}
+
+
+ <!-- Services Section -->
+    <section id="services" class="services section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Register</h2>
+        <p>Create an account to unlock access to our powerful data processing tools. Get started by filling out your information below.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+    <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button style="display: inline-block;border-radius: 4px;
+     background-color: #388da8;
+     border: none;
+     color: #FFFFFF;
+     text-align: center;
+     font-size: 17px;
+     padding: 16px;
+     width: 130px;
+     transition: all 0.5s;
+     cursor: pointer;
+     margin: 5px;" type="submit" class="default-btn">Sign Up</button>
+      </form>
+
+
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+ {% endblock %}

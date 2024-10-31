@@ -1,0 +1,99 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+
+{% block main_content %}
+
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section">
+      <div class="hero-bg">
+        <img src="{% static '/img/hero-bg-light.webp' %}" alt="">
+      </div>
+        {% if not user.is_authenticated %}
+      <div class="container text-center">
+        <div class="d-flex flex-column justify-content-center align-items-center">
+          <h1 data-aos="fade-up">Welcome to <span>ComputeX</span></h1>
+          <p data-aos="fade-up" data-aos-delay="100">Upload your CSV files, perform instant calculations, and get results at your fingertips!<br></p>
+          <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
+            <a href="{% url 'signup' %}" class="btn-get-started">Get Started</a>
+          </div>
+        </div>
+      </div>
+        {% else %}
+      <div class="container text-center">
+        <div class="d-flex flex-column justify-content-center align-items-center">
+          <h1 data-aos="fade-up">Welcome <span>{{ user.username }}</span></h1>
+          <p data-aos="fade-up" data-aos-delay="100">Upload your CSV files, perform instant calculations, and get results at your fingertips!<br></p>
+          <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
+            <a href="{% url 'compute' %}" class="btn-get-started">Compute</a>
+          </div>
+        </div>
+      </div>
+
+        {% endif %}
+
+    </section><!-- /Hero Section -->
+
+
+  </main>
+
+  <footer id="footer" class="footer position-relative light-background">
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename"> ComputeX</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>Lorem ipsum dolor sit amet</p>
+            <p>NLorem ipsum dolor sit amet</p>
+            <p class="mt-3"><strong>Lorem:</strong> <span>+1 5589 55488 55</span></p>
+            <p><strong>Email:</strong> <span>info@example.com</span></p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="#">Lorem</a></li>
+            <li><a href="#">Lorem</a></li>
+            <li><a href="#">Lorem</a></li>
+            <li><a href="#">Lorem</a></li>
+            <li><a href="#">Lorem</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="#">Lorem</a></li>
+            <li><a href="#">Lorem</a></li>
+            <li><a href="#">Lorem</a></li>
+            <li><a href="#">Lorem</a></li>
+            <li><a href="#">Lorem</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-12 footer-newsletter">
+          <h4>Lorem ipsum</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta ducimus esse.</p>
+        </div>
+
+      </div>
+    </div>
+
+
+
+    </div>
+
+  </footer>
+
+{% endblock %}
